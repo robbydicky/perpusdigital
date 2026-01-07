@@ -18,6 +18,9 @@ Route::get('/dashboard', function () {
     return view('dashboard'); // Halaman dashboard untuk User/Peminjam
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::get('/', function () {
+    return redirect()->route('login');
+});
 
 // --- AREA ADMIN ---
 // Semua route di dalam grup ini hanya bisa diakses oleh role 'admin'
